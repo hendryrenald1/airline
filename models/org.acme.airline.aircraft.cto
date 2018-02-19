@@ -1,0 +1,34 @@
+namespace org.acme.airline.aircraft
+
+
+
+asset Aircraft identified by aircraftId {
+  o String aircraftId
+
+  o Ownership ownershipType default="LEASED"
+
+  o Integer firstclassSeats        range = [4,]
+  o Integer businessclassSeats     range = [6, 20]
+  o Integer economyclassSeats     range = [30, ]
+
+
+  o String nickname optional
+
+}
+
+enum Ownership {
+  o LEASED
+  o OWNED
+}
+
+/*
+
+{
+  "$class": "org.acme.airline.aircraft.Aircraft",
+  "aircraftId": "CRAFT001",
+  "ownershipType": "LEASED",
+  "firstclassSeats": 10,
+  "businessclassSeats": 20,
+  "economyclassSeats": 30
+}
+*/
